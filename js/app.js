@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         return gameArrayOfPairsOfCard;
     }
-    
+
     // Reaordering array elements
 
     function shuffle(array) {
@@ -27,6 +27,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return arrayOfCardsInRandomOrder;
     }
+
+    // Creating divs in gameboard. For now - reversed
+
+    function createGameBoardOfFlippedCards(array) {
+        for (var i = 0; i < array.length; i++) {
+            var card = document.createElement("div");
+            card.classList.add("card");
+            card.dataset.category = array[i];
+            card.classList.add("covered");
+            gameContainer.appendChild(card);
+        }
+    }
+    createGameBoardOfFlippedCards(shuffle(createArrayOfCardsPair(arrayOfCategories)));
 
 
 });
