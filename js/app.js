@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function hideIfTheSamePicture(array) {
         if (array[0].dataset.category === array[1].dataset.category) {
             var timeout1 = setTimeout(function () {
-                console.log("te same obrazki");
                 array[0].classList.add("hidden");
                 array[1].classList.add("hidden");
                 array[0].classList.remove("flip-in-hor-bottom");
@@ -84,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (array[0].dataset.category !== array[1].dataset.category) {
 
                 var timeout1 = setTimeout(function() {
-                    console.log("różne obrazki");
                     array[0].classList.toggle("flip-in-hor-bottom");
                     array[0].classList.add("covered");
                     array[1].classList.toggle("flip-in-hor-bottom");
@@ -97,10 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     function addRestartButtonIfFinished() {
         var hiddenCards = gameContainer.getElementsByClassName("hidden");
-        console.log(hiddenCards);
 
         if (hiddenCards.length === 10) {
-            console.log("mam już 10 niewidocznych");
             var restartButton = document.createElement("div");
             restartButton.className = "restart-button";
             restartButton.innerHTML = "Graj jeszcze raz";
